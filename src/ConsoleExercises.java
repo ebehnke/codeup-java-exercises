@@ -31,7 +31,7 @@ public class ConsoleExercises {
 
 //        System.out.printf("The value of pi is approximately %.2f\n", pi);
 
-        //Explore the Scanner Class
+        //Explore the Scanner Circle
         //
         //Prompt a user to enter a integer and store that value in an int variable using the nextInt method.
 

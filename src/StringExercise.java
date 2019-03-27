@@ -10,6 +10,9 @@ public class StringExercise {
 //
 //        System.out.println('b' + 5);
 
+        String cheese = "Cheddar";
+        System.out.println(cheese);
+        System.out.println(cheese.charAt(cheese.length() - 1));
 
         //For each of the following output examples, create a string variable named message that contains the desired output and print it out to the console.
         //Do this with only one string variable and one print statement.
