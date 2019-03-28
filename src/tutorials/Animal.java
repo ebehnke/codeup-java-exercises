@@ -250,7 +250,6 @@ public class Animal {
     public String makeSound(){
         return "Grrrr";
     }
-
     // With polymorphism we can refer to any Animal and yet use overridden methods
     // in the specific animal type
     public static void speakAnimal(Animal randAnimal){
@@ -264,7 +263,7 @@ public class Animal {
     public static void main(String[] args){
         Animal theDog = new Animal();
         System.out.println("The animal is named " + theDog.getName());
-        System.out.println(Animal.printNumbers(100));
+//        System.out.println(Animal.printNumbers(100));
         Animal.countTo(100);
         Animal.guessMyNumber();
 
@@ -272,6 +271,8 @@ public class Animal {
         // How you create arrays
         // int[] favoriteNumbers;
         // favoriteNumbers = new int[20];
+            // size is strictly set when declaring it
+            // value of empty array is 0, false, or null
         int[] favoriteNumbers = new int[20];
         favoriteNumbers[0] = 100;
         String[] stringArray = {"Random", "Words", "Here"};
@@ -281,9 +282,9 @@ public class Animal {
             System.out.println(word);
         }
         // This is a multidimensional array
-        String[][][] arrayName = { { { "000" }, { "100" }, { "200" }, { "300" } },
-                { { "010" }, { "110" }, { "210" }, { "310" } },
-                { { "020" }, { "120" }, { "220" }, { "320" } }};
+        String[][][] arrayName =  { { { "000" }, { "100" }, { "200" }, { "300" } },
+                                    { { "010" }, { "110" }, { "210" }, { "310" } },
+                                    { { "020" }, { "120" }, { "220" }, { "320" } }};
         for(int i = 0; i < arrayName.length; i++)
         {
             for(int j = 0; j < arrayName[i].length; j++)
@@ -299,7 +300,7 @@ public class Animal {
         String[] cloneOfArray = Arrays.copyOf(stringArray, 3);
         // You can print out the whole array
         System.out.println(Arrays.toString(cloneOfArray));
-        // Returns the index or a negative number
+        // Search // Returns the index or a negative number
         System.out.println(Arrays.binarySearch(cloneOfArray, "Random"));
     }
 }

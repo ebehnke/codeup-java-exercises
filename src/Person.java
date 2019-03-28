@@ -18,6 +18,10 @@ public class Person {
         this.name = newName;
     }
 
+    //Create a static method named addPerson. It should accept an array of Person objects, as well as a single person object to add to the passed array. It should return an array whose length is 1 greater than the passed array, with the passed person object at the end of the array.
+//    public static void addPerson(Person[] peopleArray, Person personObj) {
+//
+//    }
 
 
     //For each code block, think about what the code will output, then copy the code into intellij and run it to see if it matches your expectation.
