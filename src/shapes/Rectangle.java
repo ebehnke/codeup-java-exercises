@@ -1,58 +1,85 @@
 package shapes;
 
-public class Rectangle {
-    int length;
-    int width;
-    public String inheritedString;
+public class Rectangle extends Quadrilateral {
 
-    public Rectangle() {
-        this.inheritedString = "this.inheritedString from Rectangle() constructor";
+    public Rectangle(double l, double w) {
+        super(l, w);
     }
 
-    public Rectangle(String str){
-        this.inheritedString = str;
+    public double setLength(double l) {
+        return this.length = l;
     }
 
-    public void inheritedMethod() {
-        System.out.printf("Hello from %s", this.inheritedString);
+    public double setWidth(double w) {
+        return this.width = w;
     }
 
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public Rectangle(int length, int width) {
-        this.length = length;
-        this.width = width;
-    }
-
-    public int getPerimeter() {
-        return 2*length + 2*width;
-    }
-
-    public int getArea() {
+    public double getArea(){
         return length*width;
     }
 
-    public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle("Parent");
-        rectangle.inheritedString = "rectangle.inheritedString from main";
-
-        rectangle.length = 5;
-        rectangle.width = 5;
-        System.out.println(rectangle.getArea());
-        System.out.println(rectangle.getPerimeter());
+    public double getPerimeter(){
+        return length*2 + width*2;
     }
+
+//    public static void main(String[] args) {
+//        Rectangle rectangle = new Rectangle(5,4);
+//
+//    }
 }
+
+//    protected int length;
+//    protected int width;
+//    public String inheritedString;
+//
+//
+//    public void inheritedMethod() {
+//        System.out.printf("Hello from %s", this.inheritedString);
+//    }
+//
+//    public int getLength() {
+//        return length;
+//    }
+//
+//    public void setLength(int length) {
+//        this.length = length;
+//    }
+//
+//    public int getWidth() {
+//        return width;
+//    }
+//
+//    public void setWidth(int width) {
+//        this.width = width;
+//    }
+//
+//    public Rectangle() {
+//        this.inheritedString = "this.inheritedString from Rectangle() constructor";
+//    }
+//
+//    public Rectangle(String str){
+//        this.inheritedString = str;
+//    }
+//
+//    public Rectangle(int length, int width) {
+//        this.length = length;
+//        this.width = width;
+//    }
+//
+//    public int getPerimeter() {
+//        return 2*length + 2*width;
+//    }
+//
+//    public int getArea() {
+//        return length*width;
+//    }
+//
+//    public static void main(String[] args) {
+//        Rectangle rectangle = new Rectangle("Parent");
+//        rectangle.inheritedString = "rectangle.inheritedString from main";
+//
+//        rectangle.length = 5;
+//        rectangle.width = 5;
+//        System.out.println(rectangle.getArea());
+//        System.out.println(rectangle.getPerimeter());
+//    }
