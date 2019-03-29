@@ -6,12 +6,14 @@ public class Square extends Rectangle {
         super(side, side);
     }
 
-    public double setLength(double l) {
-        return this.length = l;
+    public void setLength(double l) {
+        this.length = l;
+        this.width = l;
     }
 
-    public double setWidth(double w) {
-        return this.width = w;
+    public void setWidth(double w) {
+        this.width = w;
+        this.length = w;
     }
 
 

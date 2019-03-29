@@ -6,12 +6,20 @@ public class Rectangle extends Quadrilateral {
         super(l, w);
     }
 
-    public double setLength(double l) {
-        return this.length = l;
+    public double getLength(){
+        return this.length;
     }
 
-    public double setWidth(double w) {
-        return this.width = w;
+    public double getWidth(){
+        return this.width;
+    }
+
+    public void setLength(double l) {
+        this.length = l;
+    }
+
+    public void setWidth(double w) {
+        this.width = w;
     }
 
     public double getArea(){
@@ -19,7 +27,7 @@ public class Rectangle extends Quadrilateral {
     }
 
     public double getPerimeter(){
-        return length*2 + width*2;
+        return (length+width)*2;
     }
 
 //    public static void main(String[] args) {
