@@ -4,22 +4,61 @@ import java.util.*;
 
 public class ArrayPractice {
     public static void main(String[] args) {
-         int[] phoneNumber = new int[7];
-//        int[] phoneNumber2 = new int[7];
-//         boolean[] decisions = new boolean[4];
-        // ^ Same as:
-         boolean[] decisions = {true, true, false, false};
-         String[] answers = new String[4];
 
-         answers[0] = "Yes";
-         answers[1] = "True";
-         answers[2] = "" + true;
-//         System.out.println(answers[answers.length - 1]);
+        HashMap<String, Integer> hashExceptions = new HashMap<>();
 
-         String[] daysOfTheWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-         String[] daysOfTheWeekend = new String[2];
-         daysOfTheWeekend[0] = "Saturday";
-         daysOfTheWeekend[1] = "Sunday";
+        hashExceptions.put("a", 1);
+        hashExceptions.put("b", 2);
+        hashExceptions.put("c", 3);
+        hashExceptions.put("d", 4);
+        hashExceptions.put("e", 5);
+        hashExceptions.put("f", 6);
+        hashExceptions.put("g", 7);
+        hashExceptions.put("h", 8);
+        hashExceptions.put("i", 9);
+        hashExceptions.put("j", 10);
+
+//        for(String hE : hashExceptions.keySet())
+        for (int i = 0; i<15; i++) {
+            try {
+                System.out.println(hashExceptions.getOrDefault(hashExceptions, i));
+            } catch (Exception e) {
+                System.out.println("CAUGHT: " + e);
+            }
+        }
+
+
+
+        //1. Create a loop on a HashMap<String, Integer> with at least 10 elements that can throw an Exception if:
+        //- The loop gets out of bounds of the size of the hashmap
+        //- If you try to get a value from a non existing key
+
+
+
+
+
+
+
+
+
+
+//         int[] phoneNumber = new int[7];
+////        int[] phoneNumber2 = new int[7];
+////         boolean[] decisions = new boolean[4];
+//        // ^ Same as:
+//         boolean[] decisions = {true, true, false, false};
+//         String[] answers = new String[4];
+//         phoneNumber[1] = 3;
+//        System.out.println(phoneNumber[1]);
+//         answers[0] = "Yes";
+//         answers[1] = "True";
+//         answers[2] = "" + true;
+////         System.out.println(answers[answers.length - 1]);
+//
+//         String[] daysOfTheWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+//         String[] daysOfTheWeekend = new String[2];
+//         daysOfTheWeekend[0] = "Saturday";
+//         daysOfTheWeekend[1] = "Sunday";
 //        System.out.println(daysOfTheWeek[0]);
 //         daysOfTheWeek[0] = "Doomsday";
 //        System.out.println(daysOfTheWeek[0]);
@@ -81,39 +120,43 @@ public class ArrayPractice {
 //        System.out.println(Arrays.toString(rainbowColors));
 
         // Multidimensional Arrays //
-        String[][] java2dArray = new String[3][3];
-        java2dArray[2][1] = "String Value";
+//        String[][] java2dArray = new String[3][3];
+//        java2dArray[2][1] = "String Value";
+//
+//        char[][] chessBoard = {
+//                {'R','N','B','Q','K','B','N','R'},
+//                {'P','P','P','P','P','P','P','P'},
+//                {'\0','\0','\0','\0','\0','\0','\0','\0'},
+//                {'\0','\0','\0','\0','\0','\0','\0','\0'},
+//                {'\0','\0','\0','\0','\0','\0','\0','\0'},
+//                {'\0','\0','\0','\0','\0','\0','\0','\0'},
+//                {'p','p','p','p','p','p','p','p'},
+//                {'r','n','b','k','q','b','n','r'}
+//        };
 
-        char[][] chessBoard = {
-                {'R','N','B','Q','K','B','N','R'},
-                {'P','P','P','P','P','P','P','P'},
-                {'\0','\0','\0','\0','\0','\0','\0','\0'},
-                {'\0','\0','\0','\0','\0','\0','\0','\0'},
-                {'\0','\0','\0','\0','\0','\0','\0','\0'},
-                {'\0','\0','\0','\0','\0','\0','\0','\0'},
-                {'p','p','p','p','p','p','p','p'},
-                {'r','n','b','k','q','b','n','r'}
-        };
-
-        ArrayList<String> colorList = new ArrayList<>();
-        colorList.add(0, "Red");
-        colorList.add(1, "Orange");
-        colorList.add(2, "Yellow");
-        colorList.add(3, "Green");
-        colorList.add(4, "Blue");
-        colorList.add(5, "Indigo");
-        colorList.add(6, "Violet");
-        colorList.add(7, "Red");
-
-        System.out.println("ArrayList of colors: "          + colorList);
-        System.out.println("colorList index 3: "            + colorList.get(3));
-        System.out.println("Size of colorList: "            + colorList.size());
-        System.out.println("Index of Red: "                 + colorList.indexOf("Red"));
-        System.out.println("colorList contains Yellow: "    + colorList.contains("Yellow"));
-        System.out.println("colorList lastIndexOf Red: "    + colorList.lastIndexOf("Red") );
-        System.out.println("colorList isEmpty: "            + colorList.isEmpty());
-        colorList.remove("Red");
-        System.out.println(colorList);
+//        ArrayList<String> colorList = new ArrayList<>();
+//        colorList.add(0, "Red");
+//        colorList.add(1, "Orange");
+//        colorList.add("Black after 1");
+//        System.out.println(colorList);
+//        colorList.add(2, "Yellow");
+//        colorList.add(3, "Green");
+//        colorList.add(4, "Blue");
+//        colorList.add(5, "Indigo");
+//        colorList.add(6, "Violet");
+//        colorList.add(7, "Red");
+//        colorList.add("Grey");
+//
+//
+//        System.out.println("ArrayList of colors: "          + colorList);
+//        System.out.println("colorList index 3: "            + colorList.get(3));
+//        System.out.println("Size of colorList: "            + colorList.size());
+//        System.out.println("Index of Red: "                 + colorList.indexOf("Red"));
+//        System.out.println("colorList contains Yellow: "    + colorList.contains("Yellow"));
+//        System.out.println("colorList lastIndexOf Red: "    + colorList.lastIndexOf("Red") );
+//        System.out.println("colorList isEmpty: "            + colorList.isEmpty());
+//        colorList.remove("Red");
+//        System.out.println(colorList);
 
 
 

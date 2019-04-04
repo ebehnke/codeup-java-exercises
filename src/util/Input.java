@@ -4,21 +4,31 @@ import java.util.Scanner;
 
 public class Input {
 
-//    private Scanner scanner = new Scanner(System.in);
-    private Scanner scanner; // walkthrough
+    private Scanner scanner;
 
-    public Input() { // walkthrough
-        this.scanner = new Scanner(System.in);  // walkthrough
+    public static void stringNFE() {
+        try {
+            String s = "";
+            Integer.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("An integer was not entered.");
+        }
+    }
+    public static void thrower() throws Exception {
+        System.out.println("thrower");
     }
 
-    // returns valid string
+    public Input() {
+        this.scanner = new Scanner(System.in);
+    }
+
     public String getString() {
-//        return String.format("");
-        return scanner.nextLine(); // walkthrough
+        return scanner.nextLine();
     }
 
     //The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise.
     public boolean yesNo() {
+        System.out.println("(y/n)?");
         String answer = scanner.next();
         if (answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")) {
             return true;
@@ -27,107 +37,77 @@ public class Input {
         }
     }
 
-    //walkthrough
     public int getInt() {
         if (scanner.hasNextInt()) {
             return scanner.nextInt();
         }
-        scanner.next();
+        scanner.next(); // clears input to prevent infinite loop
+        stringNFE();
         return getInt();
     }
 
-    // walkthrough
     public int getInt(int min, int max) {
         int userInt = getInt();
         if (userInt >= min && userInt <= max) {
             return userInt;
         }
-        scanner.next(); // clears input to prevent infinite loop
+//        scanner.next(); // clears input to prevent infinite loop
+        try {
+            Integer.valueOf("");
+        } catch (NumberFormatException e){
+            System.out.println("An integer from " + min + " to " + max + " was not entered.");
+        }
         return getInt(min, max);
     }
 
-
-    //working version
-//    public int getInt(int min, int max) {
-//        System.out.println("Enter a number between " + min + " and " + max);
-//        int userInput = scanner.nextInt();
-//
-//        while (userInput < min || userInput > max) {
-//            System.out.println("Your number is out of range, try again: ");
-//            userInput = scanner.nextInt();
-//        }
-//        System.out.println("Your number " + userInput + " is valid!");
-//        return userInput;
-//    }
-
-    //The getInt(int min, int max) method should keep prompting the user for input until they give an integer within the min and max.
-
-//    public int getInt(int min, int max) {
-//        System.out.printf("Enter a number between the min: %d, and max: %d.%n", min,max);
-//        int userInput = scanner.nextInt();
-//        do {
-//            if (userInput < min) {
-//                System.out.println("Too low.");
-//            } else if (userInput > max) {
-//                System.out.println("Too high");
-//            } else {
-//                System.out.printf("%d is within range.", userInput);
-//            }
-//            return userInput;
-//        } while (userInput > max || userInput < min);
-//    }
-
-//        public int getInt2(int min, int max) {
-//            int output;
-//            while(!scanner.hasNextInt()){
-//                System.out.printf("Invalid input. Enter a valid integer between %d and %d: ", min, max);
-//                scanner.next();
-//            }
-//            System.out.printf("Enter an integer between %d and %d: ", min, max);
-//            output = scanner.nextInt();
-//            if(output < min || output > max) {
-//                System.out.printf("Invalid range. Enter a valid integer between %d and %d: ", min, max);
-//                return getInt(min, max);
-//            }
-//            return output;
-//        }
-
-//    public int getInt() {
-//        System.out.println("Enter an integer: ");
-//        return scanner.nextInt();
-//    }
-
-    // The getDouble method should do the same thing, but with decimal numbers.
+    public double getDouble() {
+        if (scanner.hasNextDouble()) {
+            return scanner.nextDouble();
+        }
+        scanner.next();
+        try {
+            String s = "";
+            Double.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("A double was not entered.");
+        }
+        return getDouble();
+    }
 
     public double getDouble(double min, double max) {
-        System.out.printf("Enter a number between the min: %f, and max: %f.%n", min,max);
-        double userInput = scanner.nextDouble();
-        if (userInput < min) {
-            System.out.println("Too low.");
-        } else if (userInput > max) {
-            System.out.println("Too high");
-        } else {
-            System.out.printf("%f is within range.", userInput);
+        double userDouble = getDouble();
+        if (userDouble >= min && userDouble <= max) {
+            return userDouble;
         }
-        return userInput;
+        scanner.next(); // clears input to prevent infinite loop
+        return getDouble(min, max);
     }
 
-    public double getDouble() {
-        System.out.println("Enter a decimal: ");
-        return scanner.nextDouble();
+    public String getBinary(){
+        if (scanner.hasNextInt()) {
+//            return this
+        }
+        return "";
     }
-
-    //Create another class named InputTest that has a static main method that uses all of the methods from the Input class.
 
     public static void main(String[] args) {
         Input in = new Input();
-
-//        System.out.println(in.getString()); // test to return valid string
-////        System.out.println("Yes/no?");
-////        System.out.println(in.yesNo()); // test to return boolean yes/no
-
-        System.out.println(in.getInt(1,5));
+        Scanner sc = new Scanner(System.in);
+        in.getInt();
 
 
+//        sc.nextInt();
+
+
+//        System.out.println("Enter double: ");
+//        in.getDouble();
+//        try {
+//            thrower();
+//            throw new Exception("asdf");
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        } finally {
+//            System.out.println("finally");
+//        }
     }
 }
